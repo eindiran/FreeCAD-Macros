@@ -1,0 +1,12 @@
+'''
+PythonVersion.FCMacro
+Log Python info to the console.
+'''
+import sys
+python_version = sys.version
+python_compiler = ''
+if '\n' in python_version:
+    python_version, *python_compiler = python_version.split('\n')
+print(f'Python Version:   {python_version}')
+if python_compiler:
+    print(f'Python Compiler:  {python_compiler}')
