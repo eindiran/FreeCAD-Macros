@@ -1,0 +1,15 @@
+'''
+BaseFeature-to-STL-exporter.FCMacro
+
+FreeCAD macro to export all top-level 'BaseFeature' objects as STL files.
+'''
+import FreeCAD
+import Mesh
+
+save_dir = '~/' # Update this to be the correct save directory for your project. It should end in the path separator.
+
+for obj in FreeCAD.ActiveDocument.Objects:
+    if 'BaseFeature' in set(obj.PropertiesList):
+        # Mesh.export() wants a sequence, so wrap the object in a list:
+        Mesh.export([obj], f'{save_dir}{FreeCAD.ActiveDocument.Name}-{obj.Name}.stl')
+print('STL Export Complete!')
