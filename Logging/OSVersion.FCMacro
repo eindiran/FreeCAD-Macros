@@ -1,0 +1,21 @@
+'''
+OSVersion.FCMacro
+
+Print info about the OS to the console.
+'''
+import os
+import platform
+import sys
+import sysconfig
+
+print(f'OS Type:              {os.name}')
+print(f'OS Name:              {platform.system()} {platform.release()}')
+print(f'Architecture:         {platform.machine()}, {platform.architecture()[0]} {platform.architecture()[1]}')
+print(f'sysconfig platform:   {sysconfig.get_platform()}')
+print(f'Processor:            {platform.processor()}')
+pyversion = sys.version
+pycompiler = ''
+if '\n' in pyversion:
+    pyversion, pycompiler = pyversion.split('\n')
+print(f'Python version:       {pyversion}')
+print(f'Python compiler:      {pycompiler}')
