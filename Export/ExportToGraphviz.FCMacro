@@ -1,0 +1,7 @@
+'''
+ExportToGraphvis.FCMacro
+
+Export the active doc to graphviz.
+'''
+import FreeCAD
+App.ActiveDocument.exportGraphviz()
