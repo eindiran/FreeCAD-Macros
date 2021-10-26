@@ -16,6 +16,6 @@ print(f'Processor:            {platform.processor()}')
 pyversion = sys.version
 pycompiler = ''
 if '\n' in pyversion:
-    pyversion, pycompiler = pyversion.split('\n')
+    pyversion, *pycompiler = pyversion.split('\n')
 print(f'Python version:       {pyversion}')
 print(f'Python compiler:      {pycompiler}')
